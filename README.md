@@ -90,11 +90,29 @@ Object langsung dimasukkan ke Mongo query
 Mongo menginterpretasikan object sebagai operator logika
 
 Exploitation:
-Menggunakan burp suite, kita coba memasukkan payload
+Menggunakan burp suite, kita coba memasukkan payload, sebelum memasukkan payload nyalakan dulu interceptnya.
 email:
 {"$ne": null}
 password:
 {"$ne": null}
+
+![ss](https://github.com/Naendratama/No-Sql-Injection-Write-UP/blob/main/Screenshot%202026-02-25%20230859.png)
+
+Lalu kita send ke repeater
+![ss](https://github.com/Naendratama/No-Sql-Injection-Write-UP/blob/main/Screenshot%202026-02-25%20231003.png)
+
+Lalu send
+![ss](https://github.com/Naendratama/No-Sql-Injection-Write-UP/blob/main/Screenshot%202026-02-25%20231041.png)
+
+Ditemukan sebuah token yang isinya berisi sebuah pesan yang telah terenkripsi dengan cipher base64
+Ayo kita decode
+![ss](https://github.com/Naendratama/No-Sql-Injection-Write-UP/blob/main/Screenshot%202026-02-25%20231117.png)
+
+Dan yap, flag ditemukan.
+Flag : picoCTF{jBhD2y7XoNzPv_1YxS9Ew5qL0uI6pasql_injection_25ba4de1}
+
+
+
 
 
 
